@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Box, Typography} from "@mui/material";
-import {addDayStyle} from "../../../MyApp/Drawer/AddToMyJourney";
 import AddIcon from "@mui/icons-material/Add";
 import PrintIcon from "@mui/icons-material/Print";
 
@@ -24,7 +23,7 @@ const AddAndImport = () => {
     return (
         <Box sx={{pt:1}}>
             { selectTouche.map((item, index) => (
-                <Box key={index} sx={{ ...addDayStyle }}>
+                <Box key={index}>
                     { item.icon }
                     <Typography variant="body2">{ item.text }</Typography>
                 </Box>

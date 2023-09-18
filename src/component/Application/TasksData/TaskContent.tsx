@@ -17,7 +17,7 @@ const TaskContent = ({ item, index }: any) => {
     const OpenTasks = ( data: TaskType ) => () => {
         setTaskOpenLoader( true )
         setDrawer(true)
-        setTimeout(async () =>{
+        setTimeout(async () => {
             try {
                 const res = await fetch( url + data._id )
                 const response = await res.json()

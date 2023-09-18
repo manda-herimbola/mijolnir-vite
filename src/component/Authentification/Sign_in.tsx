@@ -14,17 +14,12 @@ import {
 } from "@mui/material";
 import Copyright from "./Copyright";
 import AuthLink from './AuthLink';
-import usePostData from "../../Hooks/usePostData";
-import {useRecoilValue} from "recoil";
-import {Sign_in} from "../../RecoilState/Authentification";
 
 const theme = createTheme();
 
 export default function SignIn() {
-
-    const [email, password]: Array<boolean> = useRecoilValue(Sign_in)
-
-    const [, PostUsers ]: any = usePostData('http://localhost:5000/users/login')
+    const email = false
+    const password = false
 
     return (
         <ThemeProvider theme={theme}>
@@ -42,7 +37,7 @@ export default function SignIn() {
                     </Avatar>
                     <Typography component="h1" variant="h5">Sign in</Typography>
 
-                    <Box component="form" onSubmit={PostUsers} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" onSubmit={()=>{}} noValidate sx={{ mt: 1 }}>
                         <TextField error={email}
                             margin="normal"
                             required

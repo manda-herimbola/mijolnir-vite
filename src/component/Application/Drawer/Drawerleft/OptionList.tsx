@@ -1,11 +1,11 @@
 import React from 'react';
 import {Box, Grid, List, Skeleton, Typography} from "@mui/material";
-import {alignCenter} from "../../../MyApp/MyTasks/List/TaskList";
 import ListItemButton from "@mui/material/ListItemButton";
 import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
 import {OptionState, OptionType, Project} from "../../State/OptionState";
 import {Link} from "react-router-dom";
 import {ChangeBgImage, loaderImage, PexelsImage} from "../../State/BackgroundImage";
+import useStyle from "../../../../Style/Style";
 
 const LinkStyle: object = {
     color: 'inherit',
@@ -13,6 +13,7 @@ const LinkStyle: object = {
 }
 
 const OptionList = () => {
+    const classes = useStyle()
     const option: Array<OptionType> = useRecoilValue<Array<OptionType>>(OptionState)
     const imageBg = useRecoilValue<Array<any>>(PexelsImage)
     const setChangeBgImage = useSetRecoilState(ChangeBgImage)
@@ -47,7 +48,7 @@ const OptionList = () => {
                           key={ index }
                           style={ LinkStyle }>
                         <ListItemButton sx={{p:1.5}}>
-                            <Grid sx={{ ...alignCenter, color: 'rgb(95,95,95)'}}>
+                            <Grid className={classes.AlignCenter} sx={{ color: 'rgb(95,95,95)' }}>
                                 { item.icon }
                                 { item.users_Id === undefined ?
                                     <Skeleton variant="text" height={20} width={150}/> :

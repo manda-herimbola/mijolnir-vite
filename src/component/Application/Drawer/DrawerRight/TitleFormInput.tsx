@@ -1,9 +1,8 @@
 import React from 'react';
 import Box from "@mui/material/Box";
 import {Typography} from "@mui/material";
-import {InputStyle} from "../../../MyApp/MyTasks/List/CheckDone";
 
-const TitleFormInput = ({data, check}:any) => {
+const TitleFormInput = ({ data, check }:any) => {
     const ChangeTitle = () => {
         console.log(data.title)
     }
@@ -26,8 +25,7 @@ const TitleFormInput = ({data, check}:any) => {
                         defaultValue={ data.title }
                         name="title"
                         sx={{
-                            textDecoration: check ? "line-through" : "none",
-                            ...InputStyle, width: "100%"
+                            textDecoration: check ? "line-through" : "none", width: "100%"
                         }}/>
         </Box>
     );

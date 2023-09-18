@@ -2,7 +2,6 @@ import React from 'react';
 import {Box, TextField, Typography} from "@mui/material";
 import useStyle from '../../../../Style/Style';
 import AddIcon from "@mui/icons-material/Add";
-import {alignCenter} from "../../../MyApp/MyTasks/List/TaskList";
 
 const CategoryForm = () => {
     const classes = useStyle()
@@ -13,7 +12,7 @@ const CategoryForm = () => {
                        variant="standard"
                        id="category"
                        label={
-                           <Box sx={{...alignCenter}}>
+                           <Box className={classes.AlignCenter}>
                                <AddIcon />
                                <Typography variant="body2" sx={{ ml: 2 }}>
                                    New category

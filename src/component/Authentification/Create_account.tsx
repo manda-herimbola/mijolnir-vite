@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
-    Avatar,
     Box,
     Button,
     Container,
@@ -12,18 +11,15 @@ import {
     Typography
 } from "@mui/material";
 import Copyright from "./Copyright";
-import usePostData from "../../Hooks/usePostData";
-import {useState} from "react";
-import {Create_account} from "../../RecoilState/Authentification";
-import {useRecoilValue} from "recoil";
 
 const theme = createTheme();
 
 const CreatAccount = () => {
 
-    const [ response, PostUsers ]: any =
-        usePostData('http://localhost:5000/users/create_account', true)
-    const [username, email, password, confirmation]: Array<boolean> = useRecoilValue(Create_account)
+    const username = false
+    const email = false
+    const password = false
+    const confirmation = false
 
     return (
         <ThemeProvider theme={theme}>
@@ -40,7 +36,7 @@ const CreatAccount = () => {
                     <Typography component="h1" variant="h5">Create Account</Typography>
 
                     <Box component="form"
-                         onSubmit={ PostUsers }
+                         onSubmit={ ()=>{} }
                          noValidate
                          sx={{ mt: 1 }}>
 

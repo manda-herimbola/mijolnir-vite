@@ -3,8 +3,8 @@ import IconButton from "@mui/material/IconButton";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import {Tooltip} from "@mui/material";
-import {useRecoilState} from "recoil";
-import {TaskState, TaskType} from "../../State/TaskState";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {TaskOpen, TaskState, TaskType} from "../../State/TaskState";
 import PicAudio from "../../../../assets/Audio/Pic.mp3";
 
 const CheckDone = ( props: any ) => {
@@ -39,7 +39,7 @@ const CheckDone = ( props: any ) => {
     }
 
     return (
-        <Tooltip title={props.check ? "Done" : "Remove done"} arrow>
+        <Tooltip title={ !props.check ? "Done" : "Remove done" } arrow>
             <IconButton size="small"
                         edge="end"
                         onClick={CheckDone}
